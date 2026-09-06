@@ -1,47 +1,58 @@
-Project Overview
+# Portfolio
 
-Project Name: richmanbeka-Portfolio Website
+Personal developer portfolio for Robera Mulgeta, built with Next.js and React.
 
-Description: A responsive, modern portfolio showcasing my professional background, technical projects, and contact information.
+## Features
 
-Live Demo: [Insert Live URL Here]
+- Responsive portfolio layout for desktop, tablet, and mobile
+- About, skills, projects, and contact sections
+- Downloadable resume link
+- Links to GitHub, LinkedIn, and Telegram
 
-Tech Stack
+## Tech Stack
 
-Frontend: HTML5, CSS3, JavaScript (or React / Next.js)
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
-Styling: Tailwind CSS (or CSS Modules / Bootstrap)
+## Getting Started
 
-Deployment:GitHub Pages
+Clone the repository and install its dependencies:
 
-Key Features
+```bash
+git clone https://github.com/richmanbeka/Portfolio.git
+cd Portfolio
+npm install
+```
 
-Responsive Design: Optimized for mobile, tablet, and desktop viewing.
+Start the development server:
 
-Project Showcase: Interactive cards detailing my key projects with live links and GitHub repositories.
+```bash
+npm run dev
+```
 
-Skills Section: Categorized technical proficiencies and tools.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Contact Form: Direct communication link for recruiters and collaborators.
+## Project Structure
 
-Project Structure
-
-Plaintext
+```text
 portfolio/
-├── public/           # Static assets & images
-├── src/
-│   ├── components/   # Reusable UI components (Navbar, Footer, ProjectCard)
-│   ├── pages/        # Main views/sections
-│   ├── styles/       # Global styles & Tailwind configs
-│   └── App.js        # Main application entry
-├── package.json      # Dependencies and scripts
-└── README.md         # Project documentation
-Getting Started Locally
+|-- public/             # Static assets, including the resume and profile image
+|-- src/
+|   `-- app/
+|       |-- globals.css # Global styles
+|       |-- layout.tsx  # Root layout
+|       `-- page.tsx    # Portfolio page
+|-- package.json
+`-- README.md
+```
 
-Future Improvements
+## Available Scripts
 
-Implement a dark/light mode toggle.
-
-Add a blog section for sharing technical articles.
-
-Integrate an email service (like EmailJS) for the contact form.
+```bash
+npm run dev   # Start the development server
+npm run lint  # Run ESLint
+npm run build # Create a production build
+npm start     # Start the production server
+```
