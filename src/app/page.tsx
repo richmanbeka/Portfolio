@@ -242,6 +242,7 @@ const skills = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const resumePath = `${process.env.NODE_ENV === "production" ? "/Portfolio" : ""}/cv.pdf`;
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -264,7 +265,7 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </div>
 
-          <a href="/cv.pdf" download className="nav-talk">
+          <a href={resumePath} download className="nav-talk">
             Download Resume
             <DownloadIcon size={16} />
           </a>
@@ -342,7 +343,7 @@ export default function Home() {
                 <ArrowRightIcon size={17} />
               </a>
 
-              <a href="/cv.pdf" download className="secondary-button">
+              <a href={resumePath} download className="secondary-button">
                 Download Resume
                 <DownloadIcon size={17} />
               </a>
