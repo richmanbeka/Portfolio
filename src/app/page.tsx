@@ -266,7 +266,7 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </div>
 
-          <a href={resumePath} download className="nav-talk">
+          <a href={resumePath} download="Robera Mulugeta Resume.pdf" className="nav-talk">
             Download Resume
             <DownloadIcon size={16} />
           </a>
@@ -344,7 +344,7 @@ export default function Home() {
                 <ArrowRightIcon size={17} />
               </a>
 
-              <a href={resumePath} download className="secondary-button">
+              <a href={resumePath} download="Robera Mulugeta Resume.pdf" className="secondary-button">
                 Download Resume
                 <DownloadIcon size={17} />
               </a>
