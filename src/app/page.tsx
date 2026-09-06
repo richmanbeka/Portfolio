@@ -388,7 +388,7 @@ export default function Home() {
 
               <div className="profile-image-frame">
                 <Image
-                  src={`${assetBasePath}/profile.jpeg`}
+                  src={`${assetBasePath}/profile.jpeg?v=2`}
                   alt="Illustrated portrait of Robera Mulgeta"
                   fill
                   priority
