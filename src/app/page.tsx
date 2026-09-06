@@ -242,7 +242,8 @@ const skills = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const resumePath = `${process.env.NODE_ENV === "production" ? "/Portfolio" : ""}/cv.pdf`;
+  const assetBasePath = process.env.NODE_ENV === "production" ? "/Portfolio" : "";
+  const resumePath = `${assetBasePath}/cv.pdf`;
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -387,7 +388,7 @@ export default function Home() {
 
               <div className="profile-image-frame">
                 <Image
-                  src="/profile.jpeg"
+                  src={`${assetBasePath}/profile.jpeg`}
                   alt="Illustrated portrait of Robera Mulgeta"
                   fill
                   priority
