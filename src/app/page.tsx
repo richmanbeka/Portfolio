@@ -187,24 +187,71 @@ function CloseIcon({ size = 22 }: { size?: number }) {
   );
 }
 
-function CodeIcon({ size = 22 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="m8 9-4 3 4 3" />
-      <path d="m16 9 4 3-4 3" />
-      <path d="m14 5-4 14" />
-    </svg>
-  );
+function TechnologyLogo({ name }: { name: string }) {
+  const commonProps = {
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    "aria-hidden": true,
+  } as const;
+
+  if (name === "JavaScript" || name === "TypeScript") {
+    return (
+      <svg {...commonProps} className={`technology-logo logo-${name.toLowerCase()}`}>
+        <rect width="20" height="20" x="2" y="2" rx="2" />
+        <text x="12" y="17" textAnchor="middle">{name === "JavaScript" ? "JS" : "TS"}</text>
+      </svg>
+    );
+  }
+
+  if (name === "React") {
+    return (
+      <svg {...commonProps} className="technology-logo logo-react" fill="none" stroke="currentColor" strokeWidth="1.4">
+        <ellipse cx="12" cy="12" rx="9.5" ry="3.8" />
+        <ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(60 12 12)" />
+        <ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(120 12 12)" />
+        <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+
+  if (name === "Next.js") {
+    return (
+      <svg {...commonProps} className="technology-logo logo-next" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="9.5" />
+        <path d="M8 16V8l8 8V8" />
+      </svg>
+    );
+  }
+
+  if (name === "Tailwind CSS") {
+    return (
+      <svg {...commonProps} className="technology-logo logo-tailwind" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5C11.26 8.69 11.9 10 13.5 10c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5C14.24 7.31 13.6 6 12 6Zm-3.5 7c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5C8.26 15.69 8.9 17 10.5 17c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-1.26-.19-1.9-1.5-3.5-1.5Z" />
+      </svg>
+    );
+  }
+
+  if (name === "Python") {
+    return (
+      <svg {...commonProps} className="technology-logo logo-python" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3c-4 0-3.8 1.8-3.8 1.8v2.7h4.1v.8H6.6S3 7.9 3 12s3.1 4.1 3.1 4.1h1.8v-2.9s-.1-3 3-3h4.2s2.9.1 2.9-2.9V5s.4-2-4-2Z" fill="currentColor" opacity=".9" />
+        <path d="M12 21c4 0 3.8-1.8 3.8-1.8v-2.7h-4.1v-.8h5.7S21 16.1 21 12s-3.1-4.1-3.1-4.1h-1.8v2.9s.1 3-3 3H8.9S6 13.7 6 16.7V19s-.4 2 4 2Z" fill="currentColor" opacity=".6" />
+        <circle cx="10.3" cy="5.2" r=".8" fill="#101010" /><circle cx="13.7" cy="18.8" r=".8" fill="#101010" />
+      </svg>
+    );
+  }
+
+  if (name === "Java") {
+    return (
+      <svg {...commonProps} className="technology-logo logo-java" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M8 11h8l-.7 5.1a3.3 3.3 0 0 1-6.6 0L8 11Z" />
+        <path d="M16 12.5c2.2-.1 3.2.6 3.2 1.8 0 1.5-1.8 2.2-3.5 2.2M6.5 19h11M9 8c-1.2-1.3 1.8-1.8.3-3.2M12 8c-1.2-1.3 1.8-1.8.3-3.2" />
+      </svg>
+    );
+  }
+
+  return <GithubIcon size={24} />;
 }
 
 function RocketIcon({ size = 24 }: { size?: number }) {
@@ -464,7 +511,7 @@ export default function Home() {
               <div className="skill-card" key={skill}>
                 <div className="skill-top">
                   <span>0{index + 1}</span>
-                  <CodeIcon size={20} />
+                  <TechnologyLogo name={skill} />
                 </div>
 
                 <h3>{skill}</h3>

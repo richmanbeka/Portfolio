@@ -869,9 +869,49 @@ section {
   font-size: 10px;
 }
 
-.skill-top svg {
+.skill-top .technology-logo {
+  flex: 0 0 24px;
   color: var(--red);
-  opacity: 0.75;
+  opacity: 0.9;
+}
+
+.technology-logo text {
+  fill: #101010;
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.logo-javascript rect {
+  fill: #f7df1e;
+}
+
+.logo-typescript rect {
+  fill: #3178c6;
+}
+
+.logo-react {
+  color: #61dafb;
+}
+
+.logo-next {
+  color: #ffffff;
+}
+
+.logo-tailwind {
+  color: #38bdf8;
+}
+
+.logo-python {
+  color: #ffd343;
+}
+
+.logo-java {
+  color: #f89820;
+}
+
+.skill-top > svg:not(.technology-logo) {
+  color: #ffffff;
 }
 
 .skill-card h3 {
